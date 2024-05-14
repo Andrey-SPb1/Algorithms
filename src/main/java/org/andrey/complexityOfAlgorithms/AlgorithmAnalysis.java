@@ -13,6 +13,7 @@ public class AlgorithmAnalysis {
         constantPrint(randomArray, 77); // get value by index
         logarithmicPrint(array, 128); // get index by value
         linearPrint(randomArray); // get max value
+        quadraticPrint(randomArray); // get sum of all pairs
     }
 
     private static int[] getArray() {
@@ -35,7 +36,7 @@ public class AlgorithmAnalysis {
         long currentTime = System.currentTimeMillis();
         int result = logarithmic(arrays, target);
         long leadTime = System.currentTimeMillis() - currentTime;
-        System.out.printf("O(log n) Logarithmic --- Execution time %dms --- Result - %d\n",
+        System.out.printf("O(log n) Logarithmic --- Execution time %dms --- Result %d\n",
                 leadTime, result);
     }
 
@@ -43,7 +44,7 @@ public class AlgorithmAnalysis {
         long currentTime = System.currentTimeMillis();
         int result = constant(arrays, index);
         long leadTime = System.currentTimeMillis() - currentTime;
-        System.out.printf("O(1) Constant --- Execution time %dms --- Result - %d\n",
+        System.out.printf("O(1) Constant --- Execution time %dms --- Result %d\n",
                 leadTime, result);
     }
 
@@ -51,7 +52,15 @@ public class AlgorithmAnalysis {
         long currentTime = System.currentTimeMillis();
         int result = linear(arrays);
         long leadTime = System.currentTimeMillis() - currentTime;
-        System.out.printf("O(n) Linear --- Execution time %dms --- Result - %d\n",
+        System.out.printf("O(n) Linear --- Execution time %dms --- Result %d\n",
+                leadTime, result);
+    }
+
+    private static void quadraticPrint(int[] arrays) {
+        long currentTime = System.currentTimeMillis();
+        long result = quadratic(arrays);
+        long leadTime = System.currentTimeMillis() - currentTime;
+        System.out.printf("O(n^2) Quadratic --- Execution time %dms --- Result - %d\n",
                 leadTime, result);
     }
 

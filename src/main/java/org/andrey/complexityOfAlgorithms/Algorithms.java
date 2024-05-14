@@ -34,4 +34,15 @@ public class Algorithms {
         }
         return max;
     }
+
+    // O(n^2)
+    static long quadratic(int[] arr) {
+        long max = 0;
+        for (int j : arr) {
+            for (int k : arr) {
+                max += j + k;
+            }
+        }
+        return max;
+    }
 }
