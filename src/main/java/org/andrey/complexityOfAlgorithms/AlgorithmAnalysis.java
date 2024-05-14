@@ -10,16 +10,17 @@ public class AlgorithmAnalysis {
         int[] array = getArray();
         int[] randomArray = getRandomArray();
 
-        constantPrint(randomArray, 77); // get value by index
-        logarithmicPrint(array, 128); // get index by value
+        constantPrint(randomArray, (int) (Math.random() * 100)); // get value by index
+        logarithmicPrint(array, (int) (Math.random() * 100) + 1); // get index by value
         linearPrint(randomArray); // get max value
         quadraticPrint(randomArray); // get sum of all pairs
+        exponentialPrint((int) (Math.random() * 30)); // Fibonacci numbers
     }
 
     private static int[] getArray() {
         int[] array = new int[ARRAY_SIZE];
         for (int i = 0; i < array.length; i++) {
-            array[i] = i * 2 ;
+            array[i] = i + 1;
         }
         return array;
     }
@@ -60,7 +61,15 @@ public class AlgorithmAnalysis {
         long currentTime = System.currentTimeMillis();
         long result = quadratic(arrays);
         long leadTime = System.currentTimeMillis() - currentTime;
-        System.out.printf("O(n^2) Quadratic --- Execution time %dms --- Result - %d\n",
+        System.out.printf("O(n^2) Quadratic --- Execution time %dms --- Result %d\n",
+                leadTime, result);
+    }
+
+    private static void exponentialPrint(int n) {
+        long currentTime = System.currentTimeMillis();
+        long result = exponential(n);
+        long leadTime = System.currentTimeMillis() - currentTime;
+        System.out.printf("O(2^n) Exponential --- Execution time %dms --- Result %d\n",
                 leadTime, result);
     }
 

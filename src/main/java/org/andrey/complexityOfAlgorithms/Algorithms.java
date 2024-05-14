@@ -45,4 +45,13 @@ public class Algorithms {
         }
         return max;
     }
+
+    // O(2^n)
+    static int exponential(int n) {
+        if(n <= 1) {
+            return n;
+        } else {
+            return exponential(n - 1) + exponential(n - 2);
+        }
+    }
 }
