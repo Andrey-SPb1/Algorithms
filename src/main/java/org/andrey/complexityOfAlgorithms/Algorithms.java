@@ -25,4 +25,13 @@ public class Algorithms {
         }
         return -1; // not found
     }
+
+    // O(n)
+    static int linear(int[] arr) {
+        int max = -1;
+        for (int i : arr) {
+            if (i > max) max = i;
+        }
+        return max;
+    }
 }
