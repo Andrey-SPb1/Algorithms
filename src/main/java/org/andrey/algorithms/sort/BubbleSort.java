@@ -10,18 +10,17 @@ public class BubbleSort {
     }
 
     private static void sort(int[] values) {
-        boolean isSort = true;
-        while (isSort) {
-            boolean isSorted = true;
+        boolean needIteration = true;
+        while (needIteration) {
+            needIteration = false;
             for (int i = 0; i < values.length - 1; i++) {
                 if(values[i] > values[i+1]) {
-                    isSorted = false;
                     int swap = values[i];
                     values[i] = values[i+1];
                     values[i+1] = swap;
+                    needIteration = true;
                 }
             }
-            if(isSorted) isSort = false;
         }
     }
 }
