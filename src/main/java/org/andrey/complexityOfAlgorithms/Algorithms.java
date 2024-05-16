@@ -57,7 +57,6 @@ public class Algorithms {
 
     // O(n!)
     public static class Permute {
-
         static void permute(int n, int[] array) {
             if(n > 1) {
                 for(int i = 0; i < n-1; i++) {
