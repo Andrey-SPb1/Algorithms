@@ -14,10 +14,9 @@ public class Algorithms {
 
         while (left <= right) {
             int mid = (left + right) / 2;
-            if(arr[mid] == target) {
+            if (arr[mid] == target) {
                 return mid;
-            }
-            else if (arr[mid] < target) {
+            } else if (arr[mid] < target) {
                 left = mid + 1;
             } else {
                 right = mid - 1;
@@ -48,7 +47,7 @@ public class Algorithms {
 
     // O(2^n)
     static int fibonacci(int n) {
-        if(n <= 1) {
+        if (n <= 1) {
             return n;
         } else {
             return fibonacci(n - 1) + fibonacci(n - 2);
@@ -56,25 +55,23 @@ public class Algorithms {
     }
 
     // O(n!)
-    public static class Permute {
-        static void permute(int n, int[] array) {
-            if(n > 1) {
-                for(int i = 0; i < n-1; i++) {
-                    permute(n - 1, array);
-                    if(n % 2 == 0) {
-                        swap(array, i, n-1);
-                    } else {
-                        swap(array, 0, n-1);
-                    }
-                }
+    static void permute(int n, int[] array) {
+        if (n > 1) {
+            for (int i = 0; i < n - 1; i++) {
                 permute(n - 1, array);
+                if (n % 2 == 0) {
+                    swap(array, i, n - 1);
+                } else {
+                    swap(array, 0, n - 1);
+                }
             }
+            permute(n - 1, array);
         }
+    }
 
-        private static void swap(int[] array, int a, int b) {
-            int tmp = array[a];
-            array[a] = array[b];
-            array[b] = tmp;
-        }
+    private static void swap(int[] array, int a, int b) {
+        int tmp = array[a];
+        array[a] = array[b];
+        array[b] = tmp;
     }
 }

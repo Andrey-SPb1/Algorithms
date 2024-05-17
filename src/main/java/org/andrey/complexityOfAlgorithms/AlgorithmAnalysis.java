@@ -1,7 +1,7 @@
 package org.andrey.complexityOfAlgorithms;
 
 import static org.andrey.complexityOfAlgorithms.Algorithms.*;
-import static org.andrey.complexityOfAlgorithms.Algorithms.Permute.permute;
+import static org.andrey.complexityOfAlgorithms.Algorithms.permute;
 
 public class AlgorithmAnalysis {
 
